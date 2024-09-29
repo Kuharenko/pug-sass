@@ -1,0 +1,8 @@
+mixin sidebar-item(name, icon, hasChevron, isActive)
+    li.sidebar__item(class=isActive ? 'sidebar__item--active': '')
+        a.sidebar__item-link(href='#')
+            .sidebar__item-link-info
+                div.icon(class=icon)
+                span= name
+            if hasChevron
+                div.icon(class="chevron-icon")

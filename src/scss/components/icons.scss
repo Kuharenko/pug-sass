@@ -1,0 +1,30 @@
+@import "src/scss/utils/mixins";
+
+.key-icon {
+  @include icon('./../../assets/images/icons/key-square-svgrepo-com.svg');
+}
+
+.user-square-icon {
+  @include icon('./../../assets/images/icons/user-square.svg');
+}
+
+.box-icon {
+  @include icon('./../../assets/images/icons/3d-square.svg');
+}
+
+.wallet-money-icon {
+  @include icon('./../../assets/images/icons/wallet-money.svg');
+}
+
+.question-icon {
+  @include icon('./../../assets/images/icons/message-question.svg');
+}
+
+.discount-icon {
+  @include icon('./../../assets/images/icons/discount.svg');
+}
+
+.chevron-icon {
+  @include icon('./../../assets/images/icons/chevron.svg');
+  width: 17px;
+}

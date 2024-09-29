@@ -1,0 +1,14 @@
+mixin customer-table-row(name, company, phone, email, country, status)
+    tr
+        td= name
+        td= company
+        td= phone
+        td
+            span= email
+        td= country
+        if status === 'Active'
+            td(class='center')
+                span(class='status status--active')= status
+        else
+            td(class='center')
+                span(class='status status--inactive')= status

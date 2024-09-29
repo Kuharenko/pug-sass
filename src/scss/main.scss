@@ -1,0 +1,18 @@
+@import 'base/reset';
+@import 'base/typography';
+
+@import 'utils/variables';
+@import 'utils/mixins';
+@import 'utils/placeholders';
+@import 'utils/animation';
+
+@import "components/containers";
+@import "components/sidebar";
+@import "components/data-table";
+@import "components/icons";
+
+#animateMe {
+  position: relative; /* Или absolute, в зависимости от вашего дизайна */
+  display: inline-block; /* Это может помочь, если у вас текст */
+}
+

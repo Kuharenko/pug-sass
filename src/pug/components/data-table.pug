@@ -1,0 +1,45 @@
+include mixins/mixins
+
+div(class='data-table__header')
+    div(class='data-table__title')
+        div(class='data-table__main-title') All Customers
+        div(class='data-table__sub-title') Active members
+    div(class='data-table__search')
+        label(for='search')
+            input(id='search' name='search' placeholder='Search')
+
+.data-table__separator
+.data-table__table-container
+    table.data-table__table
+        thead
+            th Customer Name
+            th Company
+            th Phone Number
+            th Email
+            th Country
+            th(class='data-table__table--center') Status
+        tbody
+            +customer-table-row('Jane Cooper', 'Microsoft', '(225) 555-0118', 'jane@microsoft.com', 'United States', 'Active')
+            +customer-table-row('Floyd Miles', 'Yahoo', '(205) 555-0100', 'floyd@yahoo.com', 'Kiribati', 'Inactive')
+            +customer-table-row('Ronald Richards', 'Adobe', '(302) 555-0107', 'ronald@adobe.com', 'Israel', 'Inactive')
+            +customer-table-row('Marvin McKinney', 'Tesla', '(252) 555-0126', 'marvin@tesla.com', 'Iran', 'Active')
+            +customer-table-row('Jerome Bell', 'Google', '(629) 555-0129', 'jerome@google.com', 'Réunion', 'Active')
+            +customer-table-row('Kathryn Murphy', 'Microsoft', '(406) 555-0120', 'kathryn@microsoft.com', 'Curaçao', 'Active')
+            +customer-table-row('Jacob Jones', 'Yahoo', '(208) 555-0112', 'jacob@yahoo.com', 'Brazil', 'Active')
+            +customer-table-row('Kristin Watson', 'Facebook', '(704) 555-0127', 'kristin@facebook.com', 'Åland Islands', 'Inactive')
+
+
+.table-footer
+    .table-footer__total-items
+        span Showing data 1 to 8 of 256K entries
+
+    nav.table-footer__nav(aria-label="pagination")
+        ul.table-footer__pagination
+            +pagination-item('<')
+            +pagination-item(1, true)
+            +pagination-item(2)
+            +pagination-item(3)
+            +pagination-item(4)
+            +pagination-item('...')
+            +pagination-item(40)
+            +pagination-item('>')

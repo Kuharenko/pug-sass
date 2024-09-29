@@ -1,0 +1,14 @@
+@import "variables";
+
+@mixin icon ($url) {
+  width: 23px;
+  height: 28px;
+  background-color: $navigation-link-color;
+  mask: url($url) no-repeat center;
+  mask-size: contain;
+}
+
+@mixin icon-size {
+  width: 25px;
+  height: 25px;
+}

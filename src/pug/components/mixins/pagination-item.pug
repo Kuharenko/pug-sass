@@ -1,0 +1,8 @@
+mixin pagination-item(name, isActive)
+    li
+        if name === '...'
+            a(href='#' tabindex="-1" class='other') ...
+        else if isActive
+            a(href='#', class='active')= name
+        else
+            a(href='#')= name

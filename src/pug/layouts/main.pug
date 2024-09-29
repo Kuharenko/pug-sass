@@ -1,0 +1,19 @@
+html
+    head
+        title Dashboard
+        meta(charset="utf-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1")
+        link(rel='icon', sizes='16x16', href='/../assets/images/favicon-16x16.png')
+        link(rel='icon', sizes='32x32', href='/../assets/images/favicon-32x32.png')
+        link(rel='apple-touch-icon', sizes='180x180', href='/../assets/images/apple-touch-icon.png')
+        link(rel="stylesheet", href="/../css/main.css")
+        link(rel='stylesheet', href='https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap')
+    body
+        include ../components/sidebar.pug
+
+        main(class='container')
+            p(class='container__greetings reveal') Hello Evano 👋🏼,
+            section(class='data-table')
+                block content
+
+        script(src="/../js/main.js")

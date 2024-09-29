@@ -1,0 +1,327 @@
+@import "../utils/variables";
+@import "../utils/mixins";
+@import "../utils/placeholders";
+
+.data-table {
+  margin-top: 51px;
+  border-radius: 30px;
+  box-shadow: 0 10px 60px 0 rgba(226, 236, 249, 0.5);
+  background: $white-color;
+  padding: 30px 38px 40px;
+  overflow: hidden;
+
+  @media (max-width: 768px) {
+    margin-top: 25px;
+    border-radius: 10px;
+
+    padding: 15px 10px;
+  }
+
+  &__header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 32px;
+
+    @media (max-width: 991px) {
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+
+      .data-table__main-title {
+        font-size: 18px;
+      }
+
+      .data-table__sub-title {
+        font-size: 14px;
+      }
+
+      .data-table__sub-title,  .data-table__main-title {
+        text-align: center;
+      }
+    }
+  }
+
+  &__main-title {
+    color: $black-color;
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 33px;
+  }
+
+  &__sub-title {
+    color: $subtitle-color;
+    font-size: $secondary-font-size;
+    font-weight: $font-weight-light;
+    line-height: 35px;
+  }
+
+  &__search {
+    display: flex;
+    align-items: center;
+    max-width: 231px;
+    width: 100%;
+
+    label {
+      position: relative;
+      width: 100%;
+      padding-right: 15px;
+
+      &::after {
+        @include icon-size;
+
+        content: url('../../assets/images/icons/search.svg');
+        position: absolute;
+        left: 8px;
+        top: 6px;
+      }
+    }
+
+    input {
+      position: relative;
+      padding: 10px 10px 10px 40px;
+      border-radius: 10px;
+      background: $input-bg-color;
+      border: none;
+      width: 100%;
+      color: $input-color;
+      font-size: 12px;
+      font-weight: $font-weight-light;
+      line-height: $secondary-line-height;
+
+      &::placeholder {
+        color: $input-placeholder-color;
+        font-size: 12px;
+        font-weight: $font-weight-light;
+        line-height: $secondary-line-height;
+      }
+    }
+
+    @media (max-width: 991px) {
+      justify-content: center;
+      label {
+        padding-right: 0;
+      }
+    }
+  }
+
+  &__separator {
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 200%;
+      height: 1px;
+      background-color: $table-border-color;
+      top: 35px;
+      left: -50%;
+      z-index: 9;
+    }
+  }
+
+  &__table-container {
+    position: relative;
+    width: 100%;
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  &__table {
+    min-width: $table-width;
+    border-collapse: collapse;
+
+    &--center {
+      text-align: center;
+    }
+
+    thead {
+      position: relative;
+
+      th {
+        color: $input-placeholder-color;
+        font-size: $secondary-font-size;
+        font-weight: $font-weight-light;
+        line-height: $primary-line-height;
+        padding-bottom: 13px;
+      }
+    }
+
+    tbody {
+      table-layout: fixed;
+
+      td {
+        width: 180px;
+        padding-top: 20px;
+        padding-bottom: 17px;
+        color: $input-color;
+        font-size: $secondary-font-size;
+        font-weight: $font-weight-bold;
+        line-height: $primary-line-height;
+        border-bottom: 1px solid $table-border-color;
+
+        @media (max-width: 768px) {
+          padding-top: 5px;
+          padding-bottom: 4px;
+        }
+
+        &:nth-child(1) {
+          width: 169px;
+        }
+
+        &:nth-child(2) {
+          width: 129px;
+        }
+
+        &:nth-child(3) {
+          width: 154px;
+        }
+
+        &:nth-child(4) {
+          width: 205px;
+        }
+
+        &:nth-child(5) {
+          width: 130px;
+        }
+
+        &:nth-child(6) {
+          width: 93px;
+        }
+
+        .status {
+          display: block;
+          box-sizing: border-box;
+          border-radius: 4px;
+          width: 80px;
+          padding: 4px 0;
+          font-size: $secondary-font-size;
+          font-weight: $font-weight-bold;
+          line-height: $primary-line-height;
+          text-align: center;
+          cursor: pointer;
+
+          &--active {
+            color: $status-active-color;
+            border: 1px solid $status-active-border-color;
+            background: $status-active-bg-color;
+          }
+
+          &--inactive {
+            color: $status-inactive-color;
+            border: 1px solid $status-inactive-color;
+            background: $status-inactive-bg-color;
+          }
+        }
+      }
+
+      .center {
+        display: flex;
+        justify-content: center;
+      }
+    }
+  }
+
+  .table-footer {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 30px;
+
+    @media (max-width: 991px) {
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+
+      .table-footer__nav {
+        padding-top: 20px;
+      }
+    }
+
+    @media (max-width: 468px) {
+      .table-footer__total-items {
+        span {
+          font-size: 12px;
+        }
+      }
+      .table-footer__pagination {
+        a {
+          width: 20px;
+        }
+      }
+    }
+
+    &__total-items {
+      padding-top: 3px;
+
+      span {
+        color: $input-placeholder-color;
+        font-size: $secondary-font-size;
+        font-weight: $font-weight-light;
+        line-height: $primary-line-height;
+      }
+    }
+
+    &__nav {
+      max-width: 269px;
+      padding-right: 3px;
+      width: 100%;
+      display: flex;
+    }
+
+    &__pagination {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+      a {
+        color: $pagination-color;
+        font-size: 12px;
+        font-weight: $font-weight-bold;
+
+        box-sizing: border-box;
+        border-radius: 4px;
+        border: 1px solid $table-border-color;
+        background: $pagination-bg-color;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        width: 25px;
+        height: 24px;
+
+        &:hover {
+          @extend %navigation-effect;
+          background: $navigation-link-hover;
+        }
+
+        &:active {
+          @extend %navigation-effect;
+          background: $navigation-link-active;
+        }
+      }
+
+      .active {
+        @extend %navigation-effect;
+        background: $navigation-link-active;
+      }
+
+      .other {
+        width: 14px;
+        background-color: transparent;
+        border: none;
+        padding-top: 4px;
+
+        &:hover {
+          cursor: pointer;
+          color: $pagination-color;
+          border: none;
+          background-color: transparent;
+        }
+      }
+    }
+  }
+}

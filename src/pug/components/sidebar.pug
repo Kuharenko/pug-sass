@@ -1,0 +1,24 @@
+include mixins/mixins
+
+aside(class='sidebar')
+    .sidebar__general
+        .sidebar__logo-container
+            .sidebar__logo
+                img(src='/../assets/images/icons/logo.svg')
+            span.sidebar__name Dashboard
+                span(class='sidebar__version') v.01
+        nav.sidebar__nav
+            ul.sidebar__list
+                +sidebar-item('Dashboard', 'key-icon', false, false)
+                +sidebar-item('Product', 'box-icon', true, false)
+                +sidebar-item('Customers', 'user-square-icon', true, true)
+                +sidebar-item('Income', 'wallet-money-icon', true, false)
+                +sidebar-item('Promote', 'discount-icon', true, false)
+                +sidebar-item('Help', 'question-icon', true, false)
+    .sidebar__profile
+        .sidebar__avatar
+            img(src='/../assets/images/evano.png')
+        .sidebar__user-info
+            span.sidebar__username Evano
+            span.sidebar__title Project Manager
+
